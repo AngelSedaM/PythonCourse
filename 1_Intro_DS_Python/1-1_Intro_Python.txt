@@ -1,0 +1,185 @@
+//Importing Python modules
+Modules (sometimes called packages or libraries) help group together related sets of tools in Python. 
+
+# Use an import statement to import seaborn with alias sns
+import seaborn as sns
+
+import numpy as numpy
+
+//Creating Variable
+We define a variable using an equals sign (=).
+
+# Fill in Bayes' age (4.0)
+bayes_age = 4.0
+
+# Display the variable bayes_age
+print(bayes_age)
+
+# Bayes' favorite toy
+favorite_toy = "Mr. Squeaky"
+
+# Bayes' owner
+owner = 'DataCamp'
+
+# Display variables
+print(favorite_toy)
+print(owner)
+
+//Functions
+Function is an action.
+
+def functionname(params){
+    Code
+}
+
+functionname()
+
+# Import pandas
+import pandas as pd
+
+# Load the 'ransom.csv' into a DataFrame
+r = pd.read_csv('ransom.csv')
+
+# Display DataFrame
+print(r)
+
+# Create the empty list: baby_names
+baby_names = []
+
+# Loop over records 
+for row in records:
+    # Add the name to the list
+    baby_names.append(row[3])
+    
+# Sort the names in alphabetical order
+for name in sorted(baby_names):
+    # Print each name
+    print(name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

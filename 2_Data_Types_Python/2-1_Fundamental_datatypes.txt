@@ -1,0 +1,118 @@
+//Introduction and list
+
+//Container sequences
+
+A container sequence gets its name because it holds a sequence of elements of other data types. 
+In the data science world, we'll use these containers to store our data for aggregation, order, 
+sorting, and more. Python provides several container sequences such as lists, sets, and tuples to name a few. 
+
+//list
+
+Often we need to hold an ordered collection of items, and lists allow us to do just that. 
+Lists are mutable so we can add or remove data from them. Lists also allow us to access an individual element within them using an index. Let's see this in action.
+
+Position
+.index()
+
+Removing
+.pop()
+
+Adding
+.append()
+
+Combine
+.extend()
+
+Iteration 
+for x in y
+
+sorting
+.sort()
+
+# Create a list containing the names: baby_names
+baby_names = ['Ximena', 'Aliza', 'Ayden', 'Calvin']
+
+# Extend baby_names with 'Rowen' and 'Sandeep'
+baby_names.extend(['Rowen', 'Sandeep'])
+
+# Print baby_names
+print(baby_names)
+
+# Find the position of 'Aliza': position
+position = baby_names.index('Aliza')
+
+# Remove 'Aliza' from baby_names
+baby_names.pop(position)
+
+# Print baby_names
+print(baby_names)
+
+# Create the empty list: baby_names
+baby_names = []
+
+# Loop over records 
+for row in records:
+    # Add the name to the list
+    baby_names.append(row[3])
+    
+# Sort the names in alphabetical order
+for name in sorted(baby_names):
+    # Print each name
+    print(name)
+
+
+    ///tuples
+#Tuples are commonly created by sipping list together 
+zip()
+
+#Enumeration is used in loops to return the position and the data in that position
+enumerate()
+
+# Pair up the girl and boy names: pairs
+pairs = zip(girl_names, boy_names)
+
+# Iterate over pairs
+for idx, pair in enumerate(pairs):
+    # Unpack pair: girl_name, boy_name
+    girl_name, boy_name = pair
+    # Print the rank and names associated with each rank
+    print('Rank {}: {} and {}'.format(idx, girl_name, boy_name))
+
+# Create the normal variable: normal
+normal = 'simple'
+
+# Create the mistaken variable: error
+error = 'trailing comma',
+
+# Print the types of the variables
+print(type(normal))
+print(type(error))
+
+//sets
+#add single elements
+.add() 
+#merge into another set
+.update()
+#Remove elements from a value
+.discard()
+#Remove elements
+.pop
+#return a set of all names (or)
+.union()
+#return the overlapping data (and)
+.intersection()
+#return the the data that is not present into the other set
+.difference()
+
+# Find the union: all_names
+all_names = baby_names_2011.union(baby_names_2014)
+
+# Print the count of names in all_names
+print(len(all_names))
+
+# Find the intersection: overlapping_names
+overlapping_names = baby_names_2011.intersection(baby_names_2014)
+
+# Print the count of names in overlapping_names
+print(len(overlapping_names))
+
