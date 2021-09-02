@@ -1,0 +1,233 @@
+//datetime module
+
+from datetime import datetime
+print(parking_violations_date)
+
+.strptime() convert from string to datetime
+
+date_dt = datetime.strptime(parking_violations_date, '%m/%d/%yyyy')
+
+# Import the datetime object from datetime
+from datetime import datetime 
+
+# Iterate over the dates_list 
+for date_str in dates_list:
+    # Convert each date to a datetime object: date_dt
+    date_dt = datetime.strptime(date_str, '%m/%d/%Y')
+    
+    # Print each date_dt
+    print(date_dt)
+
+    # Loop over the first 10 items of the datetimes_list
+for item in datetimes_list[:10]:
+    # Print out the record as a string in the format of 'MM/DD/YYYY'
+    print(item.strftime('%m/%d/%Y'))
+    
+    # Print out the record as an ISO standard string
+    print(item.isoformat())
+
+
+//working with dates_list
+
+daily_vioolation = defaultdict(int)
+for violation in parking_violations:
+    violation_date = datetime.strptime(violation[4], '%m/%d/%Y')
+
+    daily_violations[violations_date.day] += 1
+
+print sorted(daily_violations.items())
+
+
+##now() local datetime
+##utcnow() utc datetime 
+
+
+from datetime import datetime
+local_dt = datetime.now()
+print(local_dt)
+utc_dt = datetime.utcnow(
+    print(utc_dt)
+
+//TimeZones
+
+pytz module and timezone object
+.astimezone() get time in another time TimeZones
+
+from pytz import timezone
+record_dt = datetime.strptime('07/12/2016) 04:39PM',
+...: '%m/%d/%Y %H:%M%p')
+
+nytz = timesone('US/Eastern')
+a_tz = timezone('US/Pacific')
+ny_dt = record_dt.replace(tzinfo = ny_tz)
+la_dt = ny_dt.astimezone(la_tz)
+
+
+# Create a defaultdict of an integer: monthly_total_rides
+monthly_total_rides = defaultdict(int)
+
+# Loop over the list daily_summaries
+for daily_summary in daily_summaries:
+    # Convert the service_date to a datetime object
+    service_datetime = datetime.strptime(daily_summary[0], '%m/%d/%Y')
+
+    # Add the total rides to the current amount for the month
+    monthly_total_rides[service_datetime.month] += int(daily_summary[4])
+    
+# Print monthly_total_rides
+print(monthly_total_rides)
+
+
+# Import datetime from the datetime module
+from datetime import datetime
+
+# Compute the local datetime: local_dt
+local_dt = datetime.now()
+
+# Print the local datetime
+print(local_dt)
+
+# Compute the UTC datetime: utc_dt
+utc_dt = datetime.utcnow()
+
+# Print the UTC datetime
+print(utc_dt)
+
+
+# Create a Timezone object for Chicago
+chicago_usa_tz = timezone('US/Central')
+
+# Create a Timezone object for New York
+ny_usa_tz = timezone('US/Eastern')
+
+# Iterate over the daily_summaries list
+for orig_dt, ridership in daily_summaries:
+
+    # Make the orig_dt timezone "aware" for Chicago
+    chicago_dt = orig_dt.replace(tzinfo=chicago_usa_tz)
+    
+    # Convert chicago_dt to the New York Timezone
+    ny_dt = chicago_dt.astimezone(ny_usa_tz)
+    
+    # Print the chicago_dt, ny_dt, and ridership
+    print('Chicago: %s, NY: %s, Ridership: %s' % (chicago_dt, ny_dt, ridership))
+
+//Time travel
+
+
+timedelta is used to represent an amount od change in time
+
+from datetime import timedelta
+flashblack = timedelta (days =90)
+print (record_dt)
+print (record_dt - flashback)
+
+//date time differences 
+- to calculate a differences
+time_diff = recod_dt - record2_dt
+type(time_diff)
+
+# Import timedelta from the datetime module
+from datetime import timedelta
+
+# Build a timedelta of 30 days: glanceback
+glanceback = timedelta(days=30)
+
+# Iterate over the review_dates as date
+for date in review_dates:
+    # Calculate the date 30 days back: prior_period_dt
+    prior_period_dt = date - glanceback
+    
+    # Print the review_date, day_type and total_ridership
+    print('Date: %s, Type: %s, Total Ridership: %s' %
+         (date, 
+          daily_summaries[date]['day_type'], 
+          daily_summaries[date]['total_ridership']))
+
+    # Print the prior_period_dt, day_type and total_ridership
+    print('Date: %s, Type: %s, Total Ridership: %s' %
+         (prior_period_dt, 
+          daily_summaries[prior_period_dt]['day_type'], 
+          daily_summaries[prior_period_dt]['total_ridership']))
+
+# Iterate over the date_ranges
+for start_date, end_dates in date_ranges:
+    # Print the End and Start Date
+    print(end_dates, start_date)
+    # Print the difference between each end and start date
+    print(end_dates - start_date)
+
+
+//libraries 
+
+###.parse() 
+convert string to a pendulyum datetime object without the need od the formmat string
+
+import pendulum
+occured = violation [4] + ' ' + violation[5] + 'M'
+occurred_dt = pendulum.parse (occurred, tz= 'US/Eastern')
+ 
+print (ocurred_dt)
+
+.in_timezone() converts a pendulum time pobject to a desitre timne TimeZones
+
+.now() method accepts a timezone you want to get the current time in 
+
+print(violation_dts)
+
+
+for violation_dt in violation_dts:
+
+print (violation_dt.in_timezone('Asia/Tokyo'))
+print(pendulum.now('Asia/Tokyo'))
+
+///Humanize differences 
+
+.in_XXX()  metodh provide the difference in chosen metric
+.in_words() provides the diffrence in a nice expressive from
+
+diff = violation_dts[3] - violation_dts[2]
+
+
+# Import the pendulum module
+import pendulum 
+
+# Create a now datetime for Tokyo: tokyo_dt
+tokyo_dt = pendulum.now('Asia/Tokyo')
+
+# Covert the tokyo_dt to Los Angeles: la_dt
+la_dt = tokyo_dt.in_timezone('America/Los_Angeles')
+
+# Print the ISO 8601 string of la_dt
+print(la_dt.to_iso8601_string())
+
+
+
+# Iterate over date_ranges
+for start_date, end_date in date_ranges:
+
+    # Convert the start_date string to a pendulum date: start_dt 
+    start_dt = pendulum.parse(start_date, strict = False)
+    
+    # Convert the end_date string to a pendulum date: end_dt 
+    end_dt = pendulum.parse(end_date, strict = False)
+    
+    # Print the End and Start Date
+    print(end_dt, start_dt)
+    
+    # Calculate the difference between end_dt and start_dt: diff_period
+    diff_period = end_dt - start_dt
+    
+    # Print the difference in days
+    print(diff_period.in_days())
+
+
+        
+
+
+
+
+
+
+
+
